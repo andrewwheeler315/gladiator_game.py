@@ -8,12 +8,13 @@ def test_new_gladiator():
 def test_attack():
     gladiator_a = new_gladiator(100, 0, 5, 15)
     gladiator_b = new_gladiator(100, 15, 5, 15)
-    
     result = attack(gladiator_a, gladiator_b)
     assert result == gladiator_b['Health']
 
 def test_heal():
-    
+    gladiator_a = new_gladiator(75, 40, 15, 30)
+    result = heal(gladiator_a)
+    assert result == gladiator_a['Health'] 
 
 
 def test_is_dead():
