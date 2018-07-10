@@ -28,11 +28,6 @@ def show_gladiators(attacker, defender):
                   defender['name'], defender['health'], defender['rage']))
 
 
-def is_dead():
-    if gladiator['health'] <= 0:
-        print(gladiator['name'], 'You are Dead')
-
-
 def main():
     name_1 = input('Name your fighter Player 1. ')
     gladiator_1 = core.new_gladiator(name_1, 100, 10, 15, 25)
@@ -55,6 +50,9 @@ def main():
             core.heal(gladiator_1)
         elif player_1_choice == 'Quit':
             print(gladiator_1['name'], 'Sacrifices himself.')
+        elif player_1['health'] == 0:
+            print(gladiator_1['name'], 'is Dead!')
+            core.is_dead(gladiator_1)
             exit()
 
         show_gladiators(gladiator_2, gladiator_1)
@@ -69,6 +67,9 @@ def main():
             core.heal(gladiator_2)
         elif player_2_choice == 'Quit':
             print(gladiator_2['name'], 'Sacrifices himself.')
+        elif player_2['health'] == 0:
+            print(gladiator_2['name'], 'is Dead!')
+            core.is_dead(gladiator_2)
             exit()
 
 
