@@ -1,9 +1,15 @@
 from random import randint
 
 
-def new_gladiator(health, rage, damage_low, damage_high):
+def new_gladiator(name, health, rage, damage_low, damage_high):
     '''(dict, dict, num, num) -> dict '''
-    gladiator = {'Health': 100, 'rage': 0, 'damage_low': 5, 'damage_high': 15}
+    gladiator = {
+        'name': name,
+        'health': 100,
+        'rage': 0,
+        'damage_low': 5,
+        'damage_high': 15
+    }
     return gladiator
 
 
@@ -13,24 +19,24 @@ def attack(attacker, defender):
     if crit_change <= attacker['rage']:
         crit_attack = attack * 2
         attacker['rage'] = attacker['rage'] * 0
-        damage_dealt = defender['Health'] - attack
-        crit_damage_dealt = defender['Health'] - crit_attack
-        return defender['Health']
+        damage_dealt = defender['health'] - attack
+        crit_damage_dealt = defender['health'] - crit_attack
+        return defender['health']
     else:
         attacker['rage'] = attacker['rage'] + 15
-    defender['Health'] = defender['Health'] - attack
-    return defender['Health']
+    defender['health'] = defender['health'] - attack
+    return defender['health']
 
 
 def heal(gladiator):
-    if gladiator['rage'] > 10 and gladiator['Health'] <= 95:
+    if gladiator['rage'] > 10 and gladiator['health'] <= 95:
         gladiator['rage'] = gladiator['rage'] - 10
-        gladiator['Health'] = gladiator['Health'] + 5
-        return gladiator['Health']
+        gladiator['health'] = gladiator['health'] + 5
+        return gladiator['health']
     else:
         return None
 
 
 def is_dead(gladiator):
-    if gladiator['Health'] == 0:
+    if gladiator['health'] <= 0:
         return True
