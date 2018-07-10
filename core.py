@@ -13,7 +13,8 @@ def attack(attacker, defender):
     if crit_change <= attacker['rage']:
         crit_attack = attack * 2
         attacker['rage'] = attacker['rage'] * 0
-        damage_dealt = defender['Health'] - crit_attack
+        damage_dealt = defender['Health'] - attack
+        crit_damage_dealt = defender['Health'] - crit_attack
         return defender['Health']
     else:
         attacker['rage'] = attacker['rage'] + 15
