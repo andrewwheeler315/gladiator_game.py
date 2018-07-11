@@ -32,20 +32,84 @@ def show_classes():
     class_choice = ['Assassin', 'Barbarian', 'Samurai', 'Archer', 
     'White Mage', 'Dovakiin', 'Black Mage']
 
-def choose_class():
-    if user_a
-
 
 def show_weapons():
-    'Deadric Dagger' 
-    'Leviathan Axe'
-    'Meteorite Katana'
-    "Auriel's Bow"
-    'Mythril Staff'
-    'Mehrunes Razor'
-    'Materia'
-    weapon_choice = ['Deadric Dagger', 'Leviathan', 'Meteorite Katana', 
+    weapons = {
+        'Deadric Dagger': 
+        'rage': 15,   
+        'damage_low': 10, 
+        'damage_high': 35,
+
+        'Leviathan Axe': 
+        'rage': 20, 
+        'damage_low': 15, 
+        'damage_high': 25
+    
+        'Meteorite Katana': 
+        'rage': 0, 
+        'damage_low': 25, 
+        'damage_high': 30
+    
+        "Auriel's Bow": 
+        'rage': 0, 
+        'damage_low': 15, 
+        'damage_high': 20
+    
+        'Mythril Staff': 
+        'rage': 20, 
+        'damage_low': 5, 
+        'damage_high': 25
+    
+        'Mehrunes Razor': 
+        'rage': 40, 
+        'damage_low': 10, 
+        'damage_high': 20
+    
+        'Materia': 
+        'rage': 20, 
+        'damage_low': 15, 
+        'damage_high': 25
+    }
+    return weapons
+
+    weapon_choice: ['Deadric Dagger', 'Leviathan Axe', 'Meteorite Katana', 
     "Auriel's Bow", 'Mythril Staff', 'Mehrunes Razor', 'Materia']
+
+
+def assassin_dagger_combo():
+    if class_choice == 'Assassin' and weapon_choice == 'Deadric Dagger':
+        print('An assassin with a dagger.  Who else saw this one coming? ')
+    
+
+def barbarian_axe_combo():
+    if class_choice == 'Barbarian' and weapon_choice == 'Leviathan Axe':
+        print('So now a barbarian comes to challenge with the axe of a god.')
+
+
+def samurai_katana_combo():
+    if class_choice == 'Samurai' and weapon_choice == 'Meteorite Katana':
+        print("Do you have a calm mind samurai, with that sword of your's")
+
+
+def archer_bow_combo():
+    if class_choice == 'Archer' and weapon_choice == "Auriel's Bow":
+        print("Auriel's Bow eh, that's a good bow if you plan on shooting the sun.")
+
+
+def whitemage_staff_combo():
+    if class_choice == 'White Mage' and weapon_choice == "Mythril Staff":
+        print('Now that is a classic, the Mythril Staff but then again you are a white mage. ')
+
+
+def dovakiin_razor_combo():
+    if class_choice == 'Dovakiin' and weapon_choice == "Mehrunes Razor":
+        print("Oh okay the the legendary Razor of Mehrunes Dagon and the legendary Dovakiin as well thats just an overload of legend")
+
+
+def blackmage_materia_combo():
+    if class_choice == 'Black Mage' and weapon_choice == "Materia":
+        print("So you're going to use some Materia, Black Mage you sure your not from Midgar")
+
 
 def show_gladiators(attacker, defender):
     print('''ATTACKER: {}, Health: {}, Rage: {}
